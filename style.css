@@ -1,0 +1,141 @@
+:root {
+  /* colors */
+  --color_white: hsl(0, 0%, 100%);
+  --color_light_pink: hsl(275, 100%, 97%);
+  --color_Grayish_purple: hsl(292, 16%, 49%);
+  --color_Dark_purple: hsl(292, 42%, 14%);
+
+  /* fonts */
+  --ff_work_sans: "Work Sans", sans-serif;
+
+  /* sizes */
+
+  --font_Size_large: 2.5vw;
+  --font_Size_normal: 1.1vw;
+  --font_Size_small: 1vw;
+
+  /* whights */
+  --font_whights_light: 400;
+  --font_whights_normal: 600;
+  --font_whights_Bold: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  font-family: var(--ff_work_sans);
+  font-size: var(--font_Size_small);
+  color: var(--color_Dark_purple);
+}
+
+h1 {
+  font-size: var(--font_Size_large);
+  font-weight: var(--font_whights_Bold);
+}
+h4 {
+  font-size: var(--font_Size_normal);
+  font-weight: var(--font_whights_normal);
+}
+
+header {
+  height: 35vh;
+  background-image: url(assets/images/background-pattern-desktop.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.FAQ-wrapper {
+  width: 32vw;
+  min-height: 40lvh;
+  padding: 2rem;
+
+  display: grid;
+
+  background-color: var(--color_white);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem -1rem black;
+
+  margin: -5vw auto;
+
+  transition-duration: 1s;
+}
+
+.FAQ__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  --gap: 1rem;
+  gap: var(--gap);
+}
+
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: 1rem;
+}
+.FAQ__header img,
+.accordion__header img {
+  max-width: 4vw;
+}
+.accordion__body {
+  transition-duration: 1s;
+  overflow: hidden;
+}
+.accordion__body p {
+  color: var(--color_Grayish_purple);
+  font-weight: var(--font_whights_light);
+}
+
+/* .hide_dialog {
+}
+.show_dialog {
+} */
+
+@media (max-width: 900px) {
+  :root {
+    --font_Size_large: 4.2vw;
+    --font_Size_normal: 2.5vw;
+    --font_Size_small: 2vw;
+  }
+
+  .FAQ-wrapper {
+    width: 65vw;
+    min-height: 60lvh;
+    padding: 1rem;
+    margin: -10vw auto;
+    gap: 1rem;
+  }
+}
+@media (max-width: 478px) {
+  :root {
+    --font_Size_large: 7.2vw;
+    --font_Size_normal: 3.5vw;
+    --font_Size_small: 2.7vw;
+  }
+
+  .FAQ-wrapper {
+    width: 60vw;
+    min-height: 60lvh;
+    padding: 1rem;
+    margin: -10vw auto;
+  }
+  .FAQ__header img,
+  .accordion__header img {
+    max-width: 8vw;
+  }
+}
+
+@media (min-width: 1800px) {
+  .FAQ__header img,
+  .accordion__header img {
+    min-width: 1.5vw;
+  }
+}
